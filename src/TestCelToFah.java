@@ -11,7 +11,7 @@ public class TestCelToFah {
 	{
 		TempTrans Test1 = new TempTrans();
 		double output = Test1.cToF(40);
-		assertEquals(104, output, 0.1);
+		assertEquals(104, output, 0.2);
 	}
 	
 }
