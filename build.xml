@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- WARNING: Eclipse auto-generated file.
+              Any modifications will be overwritten.
+              To include a user specific buildfile here, simply create one in the same
+              directory with the processing instruction <?eclipse.ant.import?>
+              as the first entry and export the buildfile again. --><project basedir="." default="build" name="JUNIT ass">
+    <property environment="env"/>
+    <property name="ECLIPSE_HOME" value="../../../../eclipseOLD/"/>
+    <property name="junit.output.dir" value="junit"/>
+    <property name="debuglevel" value="source,lines,vars"/>
+    <property name="target" value="1.8"/>
+    <property name="source" value="1.8"/>
+    <path id="JUnit 4.libraryclasspath">
+        <pathelement location="${ECLIPSE_HOME}plugins/org.junit_4.11.0.v201303080030/junit.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.hamcrest.core_1.3.0.v201303031735.jar"/>
+    </path>
+    <path id="JUNIT ass.classpath">
+        <pathelement location="bin"/>
+        <path refid="JUnit 4.libraryclasspath"/>
+    </path>
+    <target name="init">
+        <mkdir dir="bin"/>
+        <copy includeemptydirs="false" todir="bin">
+            <fileset dir="src">
+                <exclude name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="clean">
+        <delete dir="bin"/>
+    </target>
+    <target depends="clean" name="cleanall"/>
+    <target depends="build-subprojects,build-project" name="build"/>
+    <target name="build-subprojects"/>
+    <target depends="init" name="build-project">
+        <echo message="${ant.project.name}: ${ant.file}"/>
+        <javac debug="true" debuglevel="${debuglevel}" destdir="bin" includeantruntime="false" source="${source}" target="${target}">
+            <src path="src"/>
+            <classpath refid="JUNIT ass.classpath"/>
+        </javac>
+    </target>
+    <target description="Build all projects which reference this project. Useful to propagate changes." name="build-refprojects"/>
+    <target description="copy Eclipse compiler jars to ant lib directory" name="init-eclipse-compiler">
+        <copy todir="${ant.library.dir}">
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+        </copy>
+        <unzip dest="${ant.library.dir}">
+            <patternset includes="jdtCompilerAdapter.jar"/>
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+        </unzip>
+    </target>
+    <target description="compile project with Eclipse compiler" name="build-eclipse-compiler">
+        <property name="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter"/>
+        <antcall target="build"/>
+    </target>
+    <target name="AllTests (4)">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="AllTests" todir="${junit.output.dir}"/>
+            <classpath refid="JUNIT ass.classpath"/>
+        </junit>
+    </target>
+    <target name="ConversionCtoFTest">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="ConversionCtoFTest" todir="${junit.output.dir}"/>
+            <classpath refid="JUNIT ass.classpath"/>
+        </junit>
+    </target>
+    <target name="ConversionFtoCTest">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="ConversionFtoCTest" todir="${junit.output.dir}"/>
+            <classpath refid="JUNIT ass.classpath"/>
+        </junit>
+    </target>
+    <target name="TestAll">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="TestAll" todir="${junit.output.dir}"/>
+            <classpath refid="JUNIT ass.classpath"/>
+        </junit>
+    </target>
+    <target name="TestSuite (1)">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="TestSuite" todir="${junit.output.dir}"/>
+            <classpath refid="JUNIT ass.classpath"/>
+        </junit>
+    </target>
+    <target name="TestSuiteAll">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="TestSuiteAll" todir="${junit.output.dir}"/>
+            <classpath refid="JUNIT ass.classpath"/>
+        </junit>
+    </target>
+    <target name="TestSuiteAllTests">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="Tests.TestSuiteAllTests" todir="${junit.output.dir}"/>
+            <classpath refid="JUNIT ass.classpath"/>
+        </junit>
+    </target>
+    <target name="TestSuiteTempConversion">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="TestSuiteTempConversion" todir="${junit.output.dir}"/>
+            <classpath refid="JUNIT ass.classpath"/>
+        </junit>
+    </target>
+    <target name="TestSuiteTempConverter">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="TestSuiteTempConverter" todir="${junit.output.dir}"/>
+            <classpath refid="JUNIT ass.classpath"/>
+        </junit>
+    </target>
+    <target name="TestSuiteTemperature (1)">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="TestSuiteTemperature" todir="${junit.output.dir}"/>
+            <classpath refid="JUNIT ass.classpath"/>
+        </junit>
+    </target>
+    <target name="TestSuiteTemperatureConversion">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="TestSuiteTemperatureConversion" todir="${junit.output.dir}"/>
+            <classpath refid="JUNIT ass.classpath"/>
+        </junit>
+    </target>
+    <target name="JUNIT ass">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="TestCelToFah" todir="${junit.output.dir}"/>
+            <test name="TestFahToCel" todir="${junit.output.dir}"/>
+            <test name="TestSuiteAll" todir="${junit.output.dir}"/>
+            <classpath refid="JUNIT ass.classpath"/>
+        </junit>
+    </target>
+    <target name="junitreport">
+        <junitreport todir="${junit.output.dir}">
+            <fileset dir="${junit.output.dir}">
+                <include name="TEST-*.xml"/>
+            </fileset>
+            <report format="frames" todir="${junit.output.dir}"/>
+        </junitreport>
+    </target>
+</project>
